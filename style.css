@@ -198,3 +198,57 @@ footer {
     }
 }
 
+/* ------------------------------
+   MOBILE OPTIMIZATION
+------------------------------ */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .wishlist {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .buy-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* Modal improvements */
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 20px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cancel-btn,
+    .modal-actions .buy-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+        font-size: 1rem;
+    }
+}
