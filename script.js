@@ -54,55 +54,39 @@ document.addEventListener("DOMContentLoaded", () => {
 // EMAIL MODAL + EMAILJS
 // ------------------------------
 
-emailjs.init("YOUR_PUBLIC_KEY");
+// 🔑 EmailJS init (must be outside DOMContentLoaded)
+emailjs.init("0Qnge-Z_E2WTR5XBM");
 
 function openModal() {
-    const modal = document.getElementById("noteModal");
-    modal.style.display = "block";
+    document.getElementById("noteModal").style.display = "block";
 }
 
 function closeModal() {
-    const modal = document.getElementById("noteModal");
-    modal.style.display = "none";
+    document.getElementById("noteModal").style.display = "none";
 }
 
 function sendNote() {
-    const nameInput = document.getElementById("senderName");
-    const messageInput = document.getElementById("senderMessage");
-    const sendButton = document.querySelector(".modal-actions .buy-btn");
-
-    const name = nameInput.value.trim();
-    const message = messageInput.value.trim();
+    const name = document.getElementById("senderName").value.trim();
+    const message = document.getElementById("senderMessage").value.trim();
 
     if (!name || !message) {
         alert("Please enter your name and a note 🎄");
         return;
     }
 
-    // Prevent double clicks while sending
-    sendButton.disabled = true;
-    sendButton.textContent = "Sending…";
-
     emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        { name, message }
-    )
-    .then(() => {
+        "service_st78xek",      // your service ID
+        "template_iva3lqb",     // your template ID
+        {
+            name: name,
+            message: message
+        }
+    ).then(() => {
         alert("🎉 Note sent! Thank you!");
-
-        // Reset form
-        nameInput.value = "";
-        messageInput.value = "";
-
         closeModal();
-    })
-    .catch(() => {
+        document.getElementById("senderName").value = "";
+        document.getElementById("senderMessage").value = "";
+    }).catch(() => {
         alert("❌ Something went wrong. Please try again.");
-    })
-    .finally(() => {
-        // Always re-enable button
-        sendButton.disabled = false;
-        sendButton.textContent = "Send";
     });
 }
