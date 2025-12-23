@@ -197,3 +197,24 @@ footer {
         margin-top: 16px;
     }
 }
+
+/* 🎄 Festive footer */
+.festive-footer {
+    margin-top: 60px;
+    padding: 30px 16px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-content .dot {
+    opacity: 0.6;
+}
