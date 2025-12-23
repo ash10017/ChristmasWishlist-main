@@ -46,10 +46,13 @@ h1 {
     margin-top: 0;
 }
 
-footer {
-    margin-top: 50px;
-    font-size: 0.9rem;
-    opacity: 0.8;
+.card h3 a {
+    color: #198754;
+    text-decoration: none;
+}
+
+.card h3 a:hover {
+    text-decoration: underline;
 }
 
 .buy-btn {
@@ -74,4 +77,59 @@ footer {
 
 .card.bought .buy-btn {
     background: #6c757d;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    color: #333;
+    max-width: 400px;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.modal-content textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }

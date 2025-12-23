@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Aayush's Christmas Wishlist 🎄</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+    <h1>🎄 Aayush’s Christmas Wishlist 🎁</h1>
+    <p class="subtitle">
+        Dear Santa (and friends 😄), here’s what’s on my wishlist this Christmas.
+        <br />
+        All items can be bought using <strong>US credit cards 🇺🇸</strong>
+    </p>
+
+    <div class="wishlist">
+
+        <div class="card" data-id="iphone17">
+            <h3>
+                <a href="https://www.apple.com/in/shop/buy-iphone/iphone-17" target="_blank">
+                    📱 iPhone 17
+                </a>
+            </h3>
+            <p>The latest iPhone — sleek, powerful, and future-proof.</p>
+            <button class="buy-btn">Mark as Bought</button>
+        </div>
+
+        <div class="card" data-id="ps5">
+            <h3>
+                <a href="https://www.amazon.in/Sony-CFI-2008A01X-PlayStation%C2%AE5-Console-slim/dp/B0CY5HVDS2/" target="_blank">
+                    🎮 PlayStation 5 (Slim)
+                </a>
+            </h3>
+            <p>For legendary gaming nights and stress relief.</p>
+            <button class="buy-btn">Mark as Bought</button>
+        </div>
+
+        <div class="card" data-id="jordans">
+            <h3>
+                <a href="https://www.nike.com/in/t/air-jordan-9-retro-boots-0T5tLEGQ/AR4491-700" target="_blank">
+                    👟 Air Jordan Retro
+                </a>
+            </h3>
+            <p>Fresh kicks to end the year in style.</p>
+            <button class="buy-btn">Mark as Bought</button>
+        </div>
+
+        <div class="card" data-id="seiko">
+            <h3>
+                <a href="https://justintime.in/products/prospex-alpinist-in-tealpine-men-automatic-teal-dial-analog-leather-watch-spb503j1" target="_blank">
+                    ⌚ Seiko Prospex Alpinist
+                </a>
+            </h3>
+            <p>Automatic, timeless, and classy.</p>
+            <button class="buy-btn">Mark as Bought</button>
+        </div>
+
+        <div class="card" data-id="cash">
+            <h3>💸 Just Give Me Cash</h3>
+            <p>No size, no colour — maximum happiness.</p>
+            <button class="buy-btn">Mark as Bought</button>
+        </div>
+
+        <div class="card" data-id="note">
+            <h3>✉️ Send Me a Note</h3>
+            <p>Leave a Christmas message or surprise hint 🎄</p>
+            <button class="buy-btn" onclick="openModal()">Send Note</button>
+        </div>
+
+    </div>
+
+    <footer>
+        Made with ❤️ and Christmas spirit 🎄
+    </footer>
+</div>
+
+<!-- MODAL -->
+<div id="noteModal" class="modal">
+    <div class="modal-content">
+        <h3>🎅 Send a Note</h3>
+
+        <input
+            type="text"
+            id="senderName"
+            placeholder="Your name"
+        />
+
+        <textarea
+            id="senderMessage"
+            placeholder="Your note..."
+        ></textarea>
+
+        <div class="modal-actions">
+            <button class="buy-btn" onclick="sendNote()">Send</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
