@@ -8,6 +8,13 @@
 <body>
 
 <div class="container">
+    <button class="surprise-btn" onclick="triggerSanta()">
+        🎅 Click here for a surprise
+    </button>
+    
+    <!-- Santa Sleigh -->
+    <div id="santa-sleigh">🛷🎅🎁</div>
+    
     <h1>🎄 My Christmas Wishlist 🎁</h1>
     <p class="subtitle">
         Dear Santa (and friends 😄), here’s what’s on my wishlist this Christmas.
@@ -25,6 +32,9 @@
             </h3>
             <p>The latest iPhone — sleek, powerful, and future-proof.</p>
             <button class="buy-btn">Mark as Bought</button>
+            <button class="note-link" onclick="openModalWithProduct(this)">
+                ✉️ Send note to Aayush for this item
+            </button>
         </div>
 
         <div class="card" data-id="ps5">
@@ -35,6 +45,9 @@
             </h3>
             <p>For legendary gaming nights and stress relief.</p>
             <button class="buy-btn">Mark as Bought</button>
+            <button class="note-link" onclick="openModalWithProduct(this)">
+                ✉️ Send note to Aayush for this item
+            </button>
         </div>
 
         <div class="card" data-id="jordans">
@@ -45,6 +58,22 @@
             </h3>
             <p>Fresh kicks to end the year in style.</p>
             <button class="buy-btn">Mark as Bought</button>
+            <button class="note-link" onclick="openModalWithProduct(this)">
+                ✉️ Send note to Aayush for this item
+            </button>
+        </div>
+
+        <div class="card" data-id="jordan11">
+            <h3>
+                <a href="https://www.nike.com/in/t/air-jordan-11-retro-gamma-shoes-gMjfzz/CT8012-047" target="_blank">
+                    👟 Air Jordan 11 Retro (Gamma)
+                </a>
+            </h3>
+            <p>A classic silhouette with serious legacy.</p>
+            <button class="buy-btn">Mark as Bought</button>
+            <button class="note-link" onclick="openModalWithProduct(this)">
+                ✉️ Send note to Aayush for this item
+            </button>
         </div>
 
         <div class="card" data-id="seiko">
@@ -55,12 +84,18 @@
             </h3>
             <p>Automatic, timeless, and classy.</p>
             <button class="buy-btn">Mark as Bought</button>
+            <button class="note-link" onclick="openModalWithProduct(this)">
+                ✉️ Send note to Aayush for this item
+            </button>
         </div>
 
         <div class="card" data-id="cash">
             <h3>💸 Just Give Me Cash</h3>
             <p>No size, no colour — maximum happiness.</p>
             <button class="buy-btn">Mark as Bought</button>
+            <button class="note-link" onclick="openModalWithProduct(this)">
+                ✉️ Send note to Aayush for this item
+            </button>
         </div>
 
         <div class="card" data-id="note">

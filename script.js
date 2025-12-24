@@ -66,27 +66,87 @@ function closeModal() {
 }
 
 function sendNote() {
-    const name = document.getElementById("senderName").value.trim();
-    const message = document.getElementById("senderMessage").value.trim();
+    const nameInput = document.getElementById("senderName");
+    const messageInput = document.getElementById("senderMessage");
+
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
 
     if (!name || !message) {
         alert("Please enter your name and a note 🎄");
         return;
     }
 
+    // Disable button briefly to prevent double-tap
+    const sendButton = document.querySelector("#noteModal .buy-btn");
+    sendButton.disabled = true;
+    sendButton.textContent = "Sending…";
+
     emailjs.send(
-        "service_st78xek",      // your service ID
-        "template_iva3lqb",     // your template ID
-        {
-            name: name,
-            message: message
-        }
+        "service_st78xek",
+        "template_iva3lqb",
+        { name, message }
     ).then(() => {
         alert("🎉 Note sent! Thank you!");
+
+        // Reset fields properly
+        nameInput.value = "";
+        messageInput.value = "";
+
+        // Re-enable button
+        sendButton.disabled = false;
+        sendButton.textContent = "Send";
         closeModal();
-        document.getElementById("senderName").value = "";
-        document.getElementById("senderMessage").value = "";
+
+        // Keep modal usable for another note
+        nameInput.focus();
+
     }).catch(() => {
         alert("❌ Something went wrong. Please try again.");
+        sendButton.disabled = false;
+        sendButton.textContent = "Send";
     });
+}
+
+function openModalWithProduct(button) {
+    const card = button.closest(".card");
+    if (!card) return;
+
+    // Get product name (text only, no emojis stripped)
+    const titleElement = card.querySelector("h3");
+    const productName = titleElement.innerText.trim();
+
+    const messageBox = document.getElementById("senderMessage");
+
+    // Prefill message
+    messageBox.value =
+`- ${productName}
+
+It will be shipped directly to me at home in India :)`;
+
+    // Open modal
+    openModal();
+
+    // Focus message box for quick edit
+    setTimeout(() => messageBox.focus(), 100);
+}
+
+function triggerSanta() {
+    const sleigh = document.getElementById("santa-sleigh");
+
+    // Reset animation
+    sleigh.style.display = "block";
+    sleigh.style.animation = "none";
+    sleigh.offsetHeight; // force reflow
+
+    // Animate
+    sleigh.style.animation = "flyAcross 4s linear forwards";
+
+    // Optional: confetti-like joy 😄
+    console.log("🎅 Santa is on the way!");
+
+    // Hide after animation
+    setTimeout(() => {
+        sleigh.style.display = "none";
+    }, 4000);
 }

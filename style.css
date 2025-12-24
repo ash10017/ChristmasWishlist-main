@@ -198,3 +198,55 @@ footer {
     }
 }
 
+.note-link {
+    margin-top: 8px;
+    background: transparent;
+    border: none;
+    color: #198754;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-decoration: underline;
+}
+
+.note-link:hover {
+    color: #146c43;
+}
+
+/* 🎅 SURPRISE BUTTON */
+.surprise-btn {
+    margin-bottom: 30px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 24px;
+    background: #dc3545;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.surprise-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* 🎅 SANTA SLEIGH */
+#santa-sleigh {
+    position: fixed;
+    top: 15%;
+    left: -200px;
+    font-size: 3rem;
+    z-index: 5000;
+    pointer-events: none;
+    display: none;
+}
+
+/* Sleigh animation */
+@keyframes flyAcross {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(120vw);
+    }
+}
